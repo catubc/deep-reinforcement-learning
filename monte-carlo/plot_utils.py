@@ -45,7 +45,7 @@ def plot_policy(policy):
         x_range = np.arange(11, 22)
         y_range = np.arange(10, 0, -1)
         X, Y = np.meshgrid(x_range, y_range)
-        Z = np.array([[get_Z(x,y,usable_ace) for x in x_range] for y in y_range])
+        Z = np.array([[get_Z(x,y,usable_ace) for x in x_range] for y in y_range]).T
         surf = ax.imshow(Z, cmap=plt.get_cmap('Pastel2', 2), vmin=0, vmax=1, extent=[10.5, 21.5, 0.5, 10.5])
         plt.xticks(x_range)
         plt.yticks(y_range)
